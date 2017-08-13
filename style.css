@@ -1,0 +1,43 @@
+html, body {
+    height: 420px;
+    width: 360px;;
+}
+
+body {
+    font-family: sans-serif;
+	line-height: 1.15;
+    -ms-text-size-adjust: 100%;
+    color: #222222;
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+h1 {
+	font-size: 1.5em;
+    margin: 0.67em 0;
+    color: #1e73be;
+}
+
+a, a:visited, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    margin: 0;
+    padding: 5px;
+}
+
+li:hover {
+    background-color: lightgray;
+}
+
+h1>img {
+    padding-right: 15px;
+    vertical-align: bottom;
+}
