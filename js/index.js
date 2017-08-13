@@ -11,12 +11,15 @@ function populateUi() {
     // If request was successful
     }).done(function (xml) {
 
-        // Iterate over each `item`.
-        $.each($("item", xml), function (i, e) {
+        // Clear ui
+        $("#feed").text("");
 
-            // Extract needed data from found item object
-            var title = $(e).find("title").text();
-            var url = $(e).find("link").text();;
+        // Iterate over each `item`.
+        $.each($("item", xml), function (index, element) {
+
+            // Extract data from found `item`
+            var title = $(element).find("title").text();
+            var url = $(element).find("link").text();;
 
             // Add found item <li> to <ul> list
             $("#feed").append('<li><a class="item" href="'+url+'">'+title +'</a></li>');
