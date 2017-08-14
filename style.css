@@ -4,11 +4,11 @@ html, body {
 }
 
 body {
+    font-family: 'Libre Franklin', sans-serif;
     font-family: sans-serif;
-	line-height: 1.15;
+	line-height: 1.25;
     -ms-text-size-adjust: 100%;
     color: #222222;
-    font-family: 'Libre Franklin', sans-serif;
 }
 
 h1 {
@@ -36,6 +36,7 @@ li {
 }
 
 li:hover {
+    cursor: pointer;
     background-color: lightgray;
 }
 
@@ -44,7 +45,7 @@ h1>img {
     vertical-align: bottom;
 }
 
-.item-subtitle {
+li>span {
     font-size: 0.5em;
     color: #1e73be;
 }

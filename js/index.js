@@ -2,6 +2,7 @@
 // Parses the rss feed and populdates the related zu with
 // article items
 function populateUi() {
+
     $.ajax({
         url: 'http://windowscommunity.de/feed',
         type: 'GET',
@@ -27,7 +28,7 @@ function populateUi() {
             var time = pubDate.getHours() +':'+ pubDate.getMinutes();
 
             // Add found item <li> to <ul> list
-            $("#feed").append('<li><a class="item" href="'+url+'">' + title +'<br /><span class="item-subtitle">Veröffentlicht am: '+ date +' um '+ time +' Uhr</span></a></li>');
+            $("#feed").append('<li class="item" id="'+url+'">'+ title +'<br /><span>Veröffentlicht am: '+ date +' um '+ time +' Uhr</span></a></li>');
         });
 
     // On error
@@ -37,5 +38,23 @@ function populateUi() {
     });
 }
 
-// Add function to `pageshow` event trigger
+// Add handler function to `pageshow` event
 document.addEventListener("pageshow", populateUi()); 
+
+// Add handler function to `click` event.
+// If a list item has been clicked, it will navigate to the related url
+// and closes the extension's window
+document.addEventListener("click", function(e) {
+    
+    if (e.target.classList.contains("item") == false) {
+        return
+    } 
+
+    var url = e.target.id;
+    browser.tabs.update({url: url})
+
+    // Close extension
+    window.close();
+});
+
+
