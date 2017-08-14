@@ -19,10 +19,15 @@ function populateUi() {
 
             // Extract data from found `item`
             var title = $(element).find("title").text();
-            var url = $(element).find("link").text();;
+            var url = $(element).find("link").text();
+            var pubDate = new Date(Date.parse($(element).find("pubDate").text()));
+
+            // Post process dates
+            var date = pubDate.getDate() +'.'+ pubDate.getMonth() +'.'+ pubDate.getFullYear();
+            var time = pubDate.getHours() +':'+ pubDate.getMinutes();
 
             // Add found item <li> to <ul> list
-            $("#feed").append('<li><a class="item" href="'+url+'">'+title +'</a></li>');
+            $("#feed").append('<li><a class="item" href="'+url+'">' + title +'<br /><span class="item-subtitle">Veröffentlicht am: '+ date +' um '+ time +' Uhr</span></a></li>');
         });
 
     // On error

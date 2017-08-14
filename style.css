@@ -31,6 +31,8 @@ ul {
 li {
     margin: 0;
     padding: 5px;
+    width: 300px;
+    border-bottom: 1px solid rgba(30, 115, 190, 0.20);
 }
 
 li:hover {
@@ -40,4 +42,9 @@ li:hover {
 h1>img {
     padding-right: 15px;
     vertical-align: bottom;
+}
+
+.item-subtitle {
+    font-size: 0.5em;
+    color: #1e73be;
 }
