@@ -1,35 +1,41 @@
 {
-  "name" : "WINsider",
-  "version" : "1.0.0.0",
-  "author" : "Tobias Scholze <tobias.scholze@outlook.com>",
-  "browser_action" : 
-  {
-      "default_icon" : 
-      {
-          "20" : "icons/icon-20.png",
-          "40" : "icons/icon-40.png"
-      },
-      "default_title" : "WINsider",
-      "default_popup" : "index.html"
-  },
-  "content_scripts" : [{
-          "js" : ["js/index.js"],
-          "matches" : ["*://*/*"]
-      }
-  ],
-  "content_security_policy" : "script-src 'self'; object-src 'self'",
-  "default_locale" : "en",
-  "description" : "Übersicht über die neusten Artikel auf windowscommunity.de",
-
-  "permissions" : 
-  [
-      "*://*/*", "notifications",  "activeTab", "tabs", "contextMenus", "background", "webNavigation"
-  ],
-  "icons" : {
-      "40" : "icons/icon-40.png",
-      "30" : "icons/icon-30.png",
-      "20" : "icons/icon-20.png"
-  },
-  "minimum_edge_version" : "38.14393.0.0",
-  "web_accessible_resources" : ["icons/icon-40.png"]
-} 
+    "name": "WINsider Deutschland",
+    "version": "1.0.0.0",
+    "author": "Tobias Scholze <tobias.scholze@outlook.com>",
+    "default_locale": "de",
+    "description": "Übersicht über die neusten Artikel auf windowscommunity.de",
+    "browser_action": {
+        "default_icon": {
+            "40": "icons/icon-40.png",
+            "30": "icons/icon-30.png",
+            "25": "icons/icon-25.png",
+            "20": "icons/icon-20.png"
+        },
+        "default_title": "WINsider",
+        "default_popup": "index.html"
+    },
+    "icons": {
+        "40": "icons/icon-40.png",
+        "30": "icons/icon-30.png",
+        "25": "icons/icon-25.png",
+        "20": "icons/icon-20.png"
+    },
+    "content_scripts": [
+        {
+            "js": [
+                "js/index.js"
+            ],
+            "matches": [
+                "*://*/*"
+            ]
+        }
+    ],
+    "content_security_policy": "script-src 'self'; object-src 'self'",
+    "permissions": [
+        "*://*/*"
+    ],
+    "minimum_edge_version": "38.14393.0.0",
+    "web_accessible_resources": [
+        "icons/icon-40.png"
+    ]
+}
